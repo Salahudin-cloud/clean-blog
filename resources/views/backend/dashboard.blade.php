@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dasboard</title>
+    <title>Clean Blog</title>
 
     <!-- IMPORT REUIRED FILE CSS -->
     @include('imports.backend.css')
@@ -37,8 +37,8 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="small-box bg-danger">
                                 <div class="inner">
-                                    <h3>Rp. 500.000.000</h3>
-                                    <p>Total Donasi Tahun Ini</p>
+                                    <h3>20</h3>
+                                    <p>Post</p>
                                 </div>
                                 <div class="icon">
                                     <i class="fas fa-wallet"></i>
@@ -48,8 +48,8 @@
                         <div class="col-lg-3 col-md-6 col-sm-6">
                             <div class="small-box bg-success">
                                 <div class="inner">
-                                    <h3>Rp. 500.000.000</h3>
-                                    <p>Total Donasi Bulan Ini</p>
+                                    <h3>5</h3>
+                                    <p>Category Post</p>
                                 </div>
                                 <div class="icon">
                                     <i class="fas fa-money-bill"></i>
@@ -66,20 +66,16 @@
                                     </h1>
                                 </div>
                                 <div class="card-body">
-                                    <h3>Selamat Datang !</h3>
+                                    <h2>Selamat Datang, Admin!</h2>
                                     <div class="table-responsive">
                                         <table class="table table-borderless ">
                                             <tr>
-                                                <th width="10%">Nama</th>
-                                                <th width="1%">:</th>
-                                            </tr>
-                                            <tr>
-                                                <th width="10%">Username</th>
-                                                <th width="1%">:</th>
-                                            </tr>
-                                            <tr>
-                                                <th width="10%">Hak Akses</th>
-                                                <th width="1%">:</th>
+                                                <th width="10%">
+                                                    Time : <h3 id="clock"></h3>
+                                                </th>
+                                                <th width="10%">
+                                                    Date : <h3 id="date"></h3>
+                                                </th>
                                             </tr>
                                         </table>
                                     </div>
@@ -102,6 +98,23 @@
 
     <!-- reuired file js  -->
     @include('imports.backend.js')
+    <script>
+        let clock = document.getElementById('clock');
+        let theDate = document.getElementById('date');
+
+        function clockTime() {
+            let timeDate = new Date().toLocaleTimeString();
+            clock.innerHTML = timeDate;
+        }
+
+
+        function currentDate() {
+            let curDate = new Date().toLocaleDateString();
+            theDate.innerHTML = curDate;
+        }
+        setInterval(clockTime, 1000);
+        currentDate()
+    </script>
 </body>
 
 </html>
