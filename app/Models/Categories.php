@@ -16,7 +16,7 @@ class Categories extends Model
         'slug_categories'
     ];
 
-    public function newCategories($new_categories)
+    static function newCategories($new_categories)
     {
         return Categories::create([
             'name_categories' => $new_categories,
@@ -24,18 +24,18 @@ class Categories extends Model
         ]);
     }
 
-    public function getAllCategories()
+    static function getAllCategories()
     {
         return Categories::all();
     }
 
 
-    public function getCategoriesById($categories_id)
+    static function getCategoriesById($categories_id)
     {
         return Categories::find($categories_id);
     }
 
-    public function updateCategoriesById($categories_id, $new_categories)
+    static function updateCategoriesById($categories_id, $new_categories)
     {
         return Categories::find($categories_id)
             ->update([

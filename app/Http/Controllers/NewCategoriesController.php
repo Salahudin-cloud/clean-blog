@@ -7,12 +7,7 @@ use Illuminate\Http\Request;
 
 class NewCategoriesController extends Controller
 {
-    protected $categoriesModel;
 
-    public function __construct(Categories $categories)
-    {
-        $this->categoriesModel = $categories;
-    }
 
     public function index()
     {
@@ -23,7 +18,7 @@ class NewCategoriesController extends Controller
     {
 
         // add new categories 
-        $this->categoriesModel->newCategories($req->name_categories);
+        Categories::newCategories($req->name_categories);
 
         // redirect 
         return redirect()->to(route('categories'));
