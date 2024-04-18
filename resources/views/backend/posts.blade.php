@@ -56,7 +56,7 @@
                                     </h1>
                                 </div>
                                 <div class="card-body">
-                                    <a href="" class="btn btn-success">
+                                    <a href="{{ route('posts_new') }}" class="btn btn-success">
                                         <i class="fas fa-plus"></i> New Posts
                                     </a>
                                     <table class="table table-bordered table-hover mt-2">
